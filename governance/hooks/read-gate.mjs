@@ -74,6 +74,19 @@ export function checkReadGate(relPath, config, repoRoot) {
       return { ok: false, technology, reason: `read receipt for ${technology} is not marked read` };
     }
 
+    const preflight = receipt?.preflight;
+    if (
+      !preflight ||
+      !Array.isArray(preflight.blockers) || preflight.blockers.length === 0 ||
+      !Array.isArray(preflight.assumptions) || preflight.assumptions.length === 0
+    ) {
+      return {
+        ok: false,
+        technology,
+        reason: `read receipt for ${technology} missing pre-flight (blockers and assumptions)`
+      };
+    }
+
     const required = def?.packs ?? [];
     const receiptPacks = (receipt?.packs ?? []).map((p) => p?.path);
     for (const pack of required) {

@@ -84,6 +84,7 @@ describe('factory-guard', () => {
         reader: 'test',
         read_at: new Date().toISOString(),
         status: 'read',
+        preflight: { blockers: ['no blockers'], assumptions: ['no assumptions'] },
         packs: [{ path: '/not/here/pack.md' }]
       })
     );
@@ -100,5 +101,34 @@ describe('factory-guard', () => {
     const r = runGuard('src/cli.ts', { READ_GATE_CONFIG: cfg });
     expect(r.code).toBe(0);
     expect(r.out).toContain('ALLOWED');
+  });
+
+  it('blocks a technology-scoped write when the receipt has no pre-flight', () => {
+    const dir = mkdtempSync(resolve(tmpdir(), 'readgate-'));
+    const receipts = resolve(dir, 'receipts');
+    mkdirSync(receipts, { recursive: true });
+    writeFileSync(
+      resolve(receipts, 'testtech.json'),
+      JSON.stringify({
+        technology: 'testtech',
+        reader: 'test',
+        read_at: new Date().toISOString(),
+        status: 'read',
+        packs: [{ path: '/not/here/pack.md' }]
+      })
+    );
+    const cfg = resolve(dir, 'read-gate.json');
+    writeFileSync(
+      cfg,
+      JSON.stringify({
+        receipts_dir: receipts,
+        technologies: {
+          testtech: { packs: ['/not/here/pack.md'], paths: ['src/**'] }
+        }
+      })
+    );
+    const r = runGuard('src/cli.ts', { READ_GATE_CONFIG: cfg });
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('missing pre-flight');
   });
 });
