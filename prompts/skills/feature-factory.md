@@ -4,6 +4,7 @@ For substantive features: multi-layer, schema or API contract changes.
 
 ## Sequence
 
+0. Run the be-great skill (`prompts/skills/be-great.md`).
 1. Triage the tier.
 2. Read gate. The technology expert reads the knowledge pack for the domain
    and records a read receipt before any work.

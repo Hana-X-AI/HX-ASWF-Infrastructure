@@ -5,6 +5,7 @@ For small, single-layer changes: bug fixes, small enhancements, roughly under
 
 ## Sequence
 
+0. Run the be-great skill (`prompts/skills/be-great.md`).
 1. Triage. A typo or rename is Tier 0 (direct edit). Schema or API change is
    Tier 3. Research is Tier 1.
 2. Route research to a technology expert for the domain. The expert records a

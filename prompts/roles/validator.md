@@ -6,6 +6,7 @@ fix anything. You never validate your own work.
 
 ## What you do
 
+0. Run the be-great skill (`prompts/skills/be-great.md`).
 1. Read the spec (or the story and brief).
 2. Read the actual change.
 3. Compare them, item by item, against the acceptance criteria.

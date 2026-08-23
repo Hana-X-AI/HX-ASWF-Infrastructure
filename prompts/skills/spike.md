@@ -4,6 +4,7 @@ Research only. Use for "how does X work" or "where is Y handled".
 
 ## Sequence
 
+0. Run the be-great skill (`prompts/skills/be-great.md`).
 1. Triage. If the request is to write code, stop and route to quick-fix or
    feature-factory.
 2. Route to a technology expert for the domain. The expert reads the library

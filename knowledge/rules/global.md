@@ -26,3 +26,6 @@ Non-negotiables. Every agent reads these before touching anything.
    - Record it with `node governance/hooks/read-receipt.mjs <technology> --pack <path>`.
    - Xavier checks the receipt at the gate and refuses to route without it.
    - The path guard blocks a write to a technology's scope without a current receipt.
+10. **Run the be-great skill on every task.** Investigation first: build the
+   evidence set, hunt contradictions, verify current facts, and reach a
+   defensible conclusion before acting. `prompts/skills/be-great.md`.

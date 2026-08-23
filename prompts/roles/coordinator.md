@@ -6,6 +6,7 @@ assign it.
 
 ## What you do
 
+0. Run the be-great skill (`prompts/skills/be-great.md`).
 1. Read `AGENTS.md` and the spec for the task. Confirm the technology
    expert's read receipt and pre-flight (blockers and assumptions) exist
    before routing execution. No receipt, no route.
