@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" font-family="system-ui,'Segoe UI',sans-serif">
+  <style>
+    .bg{fill:#0a0f1a}
+    .tier{fill:#111b2f;stroke:#243654;stroke-width:1.5}
+    .tier-label{fill:#edf3ff;font-size:20px;font-weight:700}
+    .tier-sub{fill:#9aabc5;font-size:13px}
+    .item{fill:#0d1526;stroke:#243654;stroke-width:1.2}
+    .item-text{fill:#c9d6ee;font-size:14px}
+    .title{fill:#edf3ff;font-size:26px;font-weight:700;text-anchor:middle}
+    .agent{fill:#0d1526;stroke:#55d6ff;stroke-width:1.8}
+    .agent-name{fill:#edf3ff;font-size:18px;font-weight:600;text-anchor:middle}
+    .agent-sub{fill:#55d6ff;font-size:12.5px;text-anchor:middle}
+    .beam{stroke:#55d6ff;stroke-width:1.8;fill:none}
+    .receipt{fill:#111b2f;stroke:#55d6ff;stroke-width:1.4}
+    .receipt-text{fill:#55d6ff;font-size:13px;font-weight:600;text-anchor:middle}
+    @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .f0{animation:fade .5s ease both}
+    .f1{animation:fade .5s ease .12s both}
+    .f2{animation:fade .5s ease .22s both}
+    .f3{animation:fade .5s ease .32s both}
+    .f4{animation:fade .5s ease .42s both}
+    .f5{animation:fade .5s ease .52s both}
+    .f6{animation:fade .5s ease .62s both}
+    .f7{animation:fade .5s ease .72s both}
+    .b1{animation:fade .6s ease .80s both}
+    .b2{animation:fade .6s ease .90s both}
+    .rc{animation:fade .6s ease 1.05s both}
+    @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+    .pulse{animation:pulse 2.2s ease-in-out infinite}
+  </style>
+  <rect class="bg" width="1200" height="600"/>
+  <text class="title" x="600" y="46">Knowledge is foundational</text>
+  <text class="tier-sub" text-anchor="middle" x="600" y="68">Two tiers, one pointer. The agent reads at the gate and records a receipt.</text>
+
+  <!-- tier 1: in-repo -->
+  <g class="f0">
+    <rect class="tier" x="80" y="100" width="440" height="300" rx="16"/>
+    <text class="tier-label" x="110" y="140">knowledge/ · in repo</text>
+    <text class="tier-sub" x="110" y="160">git-versioned · small · curated</text>
+  </g>
+  <g class="f1"><rect class="item" x="110" y="184" width="180" height="40" rx="8"/><text class="item-text" x="126" y="209">rules</text></g>
+  <g class="f2"><rect class="item" x="310" y="184" width="180" height="40" rx="8"/><text class="item-text" x="326" y="209">conventions</text></g>
+  <g class="f3"><rect class="item" x="110" y="236" width="180" height="40" rx="8"/><text class="item-text" x="126" y="261">ADRs</text></g>
+  <g class="f4"><rect class="item" x="310" y="236" width="180" height="40" rx="8"/><text class="item-text" x="326" y="261">precedents</text></g>
+  <g class="f5"><rect class="item" x="110" y="288" width="180" height="40" rx="8"/><text class="item-text" x="126" y="313">runbooks</text></g>
+  <g class="f6"><rect class="item" x="310" y="288" width="180" height="40" rx="8"/><text class="item-text" x="326" y="313">vaults.yaml →</text></g>
+
+  <!-- tier 2: TKV -->
+  <g class="f7">
+    <rect class="tier" x="680" y="100" width="440" height="300" rx="16"/>
+    <text class="tier-label" x="710" y="140">Technology Knowledge Vault</text>
+    <text class="tier-sub" x="710" y="160">local disk · not in git · large</text>
+    <rect class="item" x="710" y="184" width="380" height="40" rx="8"/><text class="item-text" x="726" y="209">per-technology library · one agent.md each</text>
+    <rect class="item" x="710" y="236" width="380" height="40" rx="8"/><text class="item-text" x="726" y="261">reference material · searched on demand</text>
+    <rect class="item" x="710" y="288" width="380" height="40" rx="8"/><text class="item-text" x="726" y="313">grounding source for every expert</text>
+  </g>
+
+  <!-- agent at the gate -->
+  <g class="f4">
+    <rect class="agent" x="495" y="440" width="210" height="64" rx="14"/>
+    <text class="agent-name" x="600" y="468">Agent at the gate</text>
+    <text class="agent-sub" x="600" y="488">reads before executing</text>
+  </g>
+  <path class="beam b1" d="M300 400 L560 444"/>
+  <path class="beam b2" d="M900 400 L640 444"/>
+  <g class="rc">
+    <rect class="receipt" x="750" y="452" width="230" height="42" rx="10"/>
+    <text class="receipt-text" x="865" y="478">Knowledge-Vault Read Receipt</text>
+  </g>
+  <path class="beam rc" d="M705 472 L744 472"/>
+
+  <text class="tier-sub pulse" text-anchor="middle" x="600" y="580">No knowledge review, no execution.</text>
+</svg>

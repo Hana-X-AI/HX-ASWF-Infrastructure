@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360 560" font-family="system-ui,'Segoe UI',sans-serif">
+  <style>
+    .bg{fill:#0a0f1a}
+    .node{fill:#111b2f;stroke:#243654;stroke-width:1.5}
+    .node-label{fill:#edf3ff;font-size:21px;font-weight:600;text-anchor:middle}
+    .node-sub{fill:#9aabc5;font-size:12.5px;text-anchor:middle}
+    .edge{stroke:#243654;stroke-width:2;fill:none}
+    .token{fill:#55d6ff}
+    .glow{fill:none;stroke:#55d6ff;stroke-width:2;opacity:.45}
+    .title{fill:#edf3ff;font-size:26px;font-weight:700;text-anchor:middle}
+    .tagline{fill:#9aabc5;font-size:15px;text-anchor:middle}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+    .n0{animation:fade .5s ease both}
+    .n1{animation:fade .5s ease .10s both}
+    .n2{animation:fade .5s ease .20s both}
+    .n3{animation:fade .5s ease .30s both}
+    .n4{animation:fade .5s ease .40s both}
+    .n5{animation:fade .5s ease .50s both}
+    .n6{animation:fade .5s ease .60s both}
+    .e1{animation:fade .6s ease .18s both}
+    .e2{animation:fade .6s ease .28s both}
+    .e3{animation:fade .6s ease .38s both}
+    .e4{animation:fade .6s ease .48s both}
+    .e5{animation:fade .6s ease .58s both}
+    .e6{animation:fade .6s ease .68s both}
+    .er{animation:fade .8s ease .80s both}
+    @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+    .glow{animation:pulse 2s ease-in-out infinite}
+  </style>
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#243654"/></marker>
+  </defs>
+  <rect class="bg" width="1360" height="560"/>
+  <text class="title" x="680" y="52">The one loop</text>
+  <text class="tagline" x="680" y="78">Signal in, change out, evidence at every step</text>
+
+  <!-- nodes: x centers 80,280,480,680,880,1080,1280 ; y center 150 -->
+  <g class="n0"><rect class="node" x="20" y="106" width="120" height="88" rx="14"/><text class="node-label" x="80" y="146">Signal</text><text class="node-sub" x="80" y="168">spec · bug · request</text></g>
+  <g class="n1"><rect class="node" x="220" y="106" width="120" height="88" rx="14"/><text class="node-label" x="280" y="146">Triage</text><text class="node-sub" x="280" y="168">tier + route</text></g>
+  <g class="n2"><rect class="node" x="420" y="106" width="120" height="88" rx="14"/><text class="node-label" x="480" y="146">Plan</text><text class="node-sub" x="480" y="168">gates before work</text></g>
+  <g class="n3"><rect class="node" x="620" y="106" width="120" height="88" rx="14"/><text class="node-label" x="680" y="146">Build</text><text class="node-sub" x="680" y="168">code + tests</text></g>
+  <g class="n4"><rect class="node" x="820" y="106" width="120" height="88" rx="14"/><text class="node-label" x="880" y="146">Validate</text><text class="node-sub" x="880" y="168">deterministic gates</text></g>
+  <g class="n5"><rect class="node" x="1020" y="106" width="120" height="88" rx="14"/><text class="node-label" x="1080" y="146">Deploy</text><text class="node-sub" x="1080" y="168">ship</text></g>
+  <g class="n6"><rect class="node" x="1220" y="106" width="120" height="88" rx="14"/><text class="node-label" x="1280" y="146">Observe</text><text class="node-sub" x="1280" y="168">measure + learn</text></g>
+
+  <!-- forward edges -->
+  <line class="edge e1" x1="140" y1="150" x2="214" y2="150" marker-end="url(#ah)"/>
+  <line class="edge e2" x1="340" y1="150" x2="414" y2="150" marker-end="url(#ah)"/>
+  <line class="edge e3" x1="540" y1="150" x2="614" y2="150" marker-end="url(#ah)"/>
+  <line class="edge e4" x1="740" y1="150" x2="814" y2="150" marker-end="url(#ah)"/>
+  <line class="edge e5" x1="940" y1="150" x2="1014" y2="150" marker-end="url(#ah)"/>
+  <line class="edge e6" x1="1140" y1="150" x2="1214" y2="150" marker-end="url(#ah)"/>
+
+  <!-- return path: observe down, left, up to signal -->
+  <path class="edge er" d="M1280 194 L1280 400 L80 400 L80 194" marker-end="url(#ah)"/>
+
+  <!-- traveling token -->
+  <circle class="glow" r="12"><animateMotion dur="12s" repeatCount="indefinite" path="M80,150 H1280 V400 H80 Z"/></circle>
+  <circle class="token" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M80,150 H1280 V400 H80 Z"/></circle>
+</svg>
