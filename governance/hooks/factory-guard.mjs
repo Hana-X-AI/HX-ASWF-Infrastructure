@@ -3,45 +3,16 @@
 // A guardrail, not a sandbox: it blocks Write and Edit, not Bash.
 // Usage: node factory-guard.mjs <path>
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { matches, checkReadGate } from './read-gate.mjs';
 
 const ROOT = resolve(fileURLToPath(new URL('../../', import.meta.url)));
 const SCOPE_FILE = resolve(ROOT, 'governance/hooks/factory-scope.json');
-
-// Convert a path glob to a regex. Supports:
-//   *    matches within one path segment
-//   **   matches across segments (including none)
-function globToRegex(pattern) {
-  let re = '';
-  for (let i = 0; i < pattern.length; i++) {
-    const c = pattern[i];
-    if (c === '*') {
-      if (pattern[i + 1] === '*') {
-        re += '.*';
-        i += 1;
-        if (pattern[i + 1] === '/') i += 1; // a/**/b also matches a/b
-      } else {
-        re += '[^/]*';
-      }
-    } else if (c === '?') {
-      re += '[^/]';
-    } else if ('\\.[]{}()+-^$|'.includes(c)) {
-      re += '\\' + c;
-    } else {
-      re += c;
-    }
-  }
-  return new RegExp('^' + re + '$');
-}
-
-function matches(path, patterns) {
-  for (const p of patterns) {
-    if (globToRegex(p).test(path)) return true;
-  }
-  return false;
-}
+const READ_GATE_FILE = process.env.READ_GATE_CONFIG
+  ? resolve(process.env.READ_GATE_CONFIG)
+  : resolve(ROOT, 'governance/hooks/read-gate.json');
 
 function main() {
   const target = process.argv[2];
@@ -66,6 +37,14 @@ function main() {
     process.exit(1);
   }
   if (matches(path, scope.allowed || [])) {
+    if (existsSync(READ_GATE_FILE)) {
+      const readGate = JSON.parse(readFileSync(READ_GATE_FILE, 'utf8'));
+      const check = checkReadGate(path, readGate, ROOT);
+      if (!check.ok) {
+        console.log(`BLOCKED ${target} (read gate: ${check.reason})`);
+        process.exit(1);
+      }
+    }
     console.log(`ALLOWED ${target}`);
     process.exit(0);
   }

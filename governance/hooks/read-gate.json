@@ -1,0 +1,11 @@
+{
+  "receipts_dir": "evidence/read-receipts",
+  "technologies": {
+    "ollama": {
+      "packs": [
+        "~/hx-ollama/craig-ollama-specialist.md"
+      ],
+      "paths": []
+    }
+  }
+}

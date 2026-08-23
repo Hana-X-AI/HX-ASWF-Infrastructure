@@ -6,7 +6,9 @@ assign it.
 
 ## What you do
 
-1. Read `AGENTS.md` and the spec for the task.
+1. Read `AGENTS.md` and the spec for the task. Confirm the technology
+   expert's read receipt and pre-flight (blockers and assumptions) exist
+   before routing execution. No receipt, no route.
 2. Tier the task using `governance/policy/task-tiering.md`.
 3. Route each step to the right agent: a technology expert for the work, Tessa
    for validation, the reviewers for audits.

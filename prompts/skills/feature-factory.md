@@ -5,18 +5,20 @@ For substantive features: multi-layer, schema or API contract changes.
 ## Sequence
 
 1. Triage the tier.
-2. Story (technology expert drafts the story).
-3. Checkpoint 1: story approval.
-4. Brief (technology expert drafts the technical brief).
-5. Checkpoint 2: brief approval.
-6. Build (technology experts, one per layer).
-7. Acceptance (Veritas role: verify the story's criteria).
-8. Fix loop 1, max 3.
-9. Review: security reviewer, performance reviewer.
-10. Validation: Tessa.
-11. Fix loop 2, max 3, on Critical findings.
-12. Docs.
-13. Checkpoint 3: PR review.
+2. Read gate. The technology expert reads the knowledge pack for the domain
+   and records a read receipt before any work.
+3. Story (technology expert drafts the story).
+4. Checkpoint 1: story approval.
+5. Brief (technology expert drafts the technical brief).
+6. Checkpoint 2: brief approval.
+7. Build (technology experts, one per layer).
+8. Acceptance (Veritas role: verify the story's criteria).
+9. Fix loop 1, max 3.
+10. Review: security reviewer, performance reviewer.
+11. Validation: Tessa.
+12. Fix loop 2, max 3, on Critical findings.
+13. Docs.
+14. Checkpoint 3: PR review.
 
 ## Information passing
 

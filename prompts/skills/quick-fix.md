@@ -7,7 +7,8 @@ For small, single-layer changes: bug fixes, small enhancements, roughly under
 
 1. Triage. A typo or rename is Tier 0 (direct edit). Schema or API change is
    Tier 3. Research is Tier 1.
-2. Route research to a technology expert for the domain.
+2. Route research to a technology expert for the domain. The expert records a
+   read receipt before building.
 3. Checkpoint: a 3-bullet plan (files, approach, risks). Wait for go.
 4. Route build to one technology expert.
 5. Route validation to Tessa.
