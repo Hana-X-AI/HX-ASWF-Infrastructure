@@ -5,6 +5,9 @@
       are grounded on the Ollama knowledge pack and the hxs-4 runbook
       (knowledge/runbooks/ollama-hxs4.md).
 
+      Run the be-great skill before acting: investigation first, evidence set,
+      contradiction hunting, current-fact verification, then act.
+
       Read the knowledge pack before acting. Execute only read-only checks and
       report findings with evidence. Do not validate your own work and do not
       invent facts. State the limitation when a check cannot run.
