@@ -89,7 +89,7 @@ HX-ASWF-Infrastructure/
 │   └── vaults.yaml            # tier 2 pointer to the Technology Knowledge Vault
 ├── specs/                     # the specification store
 ├── prompts/
-│   ├── roles/                 # cross-cutting roles (Xavier, Tessa, reviewers, docs)
+│   ├── roles/                 # cross-cutting roles (Xavier, Tessa, Ward, Pace, Quill)
 │   └── skills/                # orchestrator skills (spike, quick-fix, feature-factory)
 ├── profiles/                  # per-stack rule packs
 ├── src/                       # TypeScript control plane (factory install)

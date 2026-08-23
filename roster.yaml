@@ -5,9 +5,9 @@
 cross_cutting:            # process roles, in prompts/roles/
   - { name: Xavier, role: coordinator, prompt: prompts/roles/coordinator.md }
   - { name: Tessa,  role: validator,   prompt: prompts/roles/validator.md }
-  - { name: TBD,    role: security-reviewer,      prompt: prompts/roles/security-reviewer.md }
-  - { name: TBD,    role: performance-reviewer,   prompt: prompts/roles/performance-reviewer.md }
-  - { name: TBD,    role: doc-writer,             prompt: prompts/roles/doc-writer.md }
+  - { name: Ward,   role: security-reviewer,      prompt: prompts/roles/security-reviewer.md }
+  - { name: Pace,   role: performance-reviewer,   prompt: prompts/roles/performance-reviewer.md }
+  - { name: Quill,  role: doc-writer,             prompt: prompts/roles/doc-writer.md }
 
 base_factory:             # always-on technology experts (KDD-027)
   - { name: Ledger,  technology: postgresql,      library: technologies/postgresql }
@@ -20,9 +20,9 @@ base_factory:             # always-on technology experts (KDD-027)
   - { name: Owen,    technology: systems,         library: technologies/ubuntu-server }
 
 # Recommended base, pending owner confirmation (KDD-027)
-  - { name: Porter,  technology: fastmcp,         library: technologies/mcp-plane, pending: true }
-  - { name: Atlas,   technology: code-review-graph, library: technologies/code-review-graph, pending: true }
-  - { name: Argus,   technology: code-graph-rag,  library: technologies/code-graph-rag, pending: true }
+  - { name: Porter,  technology: fastmcp,         library: technologies/mcp-plane }
+  - { name: Atlas,   technology: code-review-graph, library: technologies/code-review-graph }
+  - { name: Argus,   technology: code-graph-rag,  library: technologies/code-graph-rag }
 
 product_line:             # parked, activated per product (KDD-027)
   - { name: Bastion,  technology: nginx,        library: technologies/nginx }

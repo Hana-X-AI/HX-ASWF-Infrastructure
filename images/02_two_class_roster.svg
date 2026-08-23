@@ -53,9 +53,9 @@
   <text class="head" x="880" y="224">Cross-cutting roles</text>
   <text class="sub" x="880" y="244">never per-technology, so the fleet stays linear</text>
   <g class="f7"><rect class="card" x="740" y="262" width="280" height="52" rx="12"/><text class="name" x="760" y="284">Tessa</text><text class="role" x="760" y="304">validator · independent</text></g>
-  <g class="f8"><rect class="card" x="740" y="322" width="280" height="52" rx="12"/><text class="name" x="760" y="344">Security reviewer</text><text class="role" x="760" y="364">read-only audit</text></g>
-  <g class="f9"><rect class="card" x="740" y="382" width="280" height="52" rx="12"/><text class="name" x="760" y="404">Performance reviewer</text><text class="role" x="760" y="424">read-only audit</text></g>
-  <g class="f10"><rect class="card" x="740" y="442" width="280" height="52" rx="12"/><text class="name" x="760" y="464">Doc writer</text><text class="role" x="760" y="484">changelog + guides</text></g>
+  <g class="f8"><rect class="card" x="740" y="322" width="280" height="52" rx="12"/><text class="name" x="760" y="344">Ward</text><text class="role" x="760" y="364">security · read-only audit</text></g>
+  <g class="f9"><rect class="card" x="740" y="382" width="280" height="52" rx="12"/><text class="name" x="760" y="404">Pace</text><text class="role" x="760" y="424">performance · read-only audit</text></g>
+  <g class="f10"><rect class="card" x="740" y="442" width="280" height="52" rx="12"/><text class="name" x="760" y="464">Quill</text><text class="role" x="760" y="484">docs · changelog + guides</text></g>
 
   <!-- separation rule -->
   <text class="sub pulse" x="600" y="620">No actor validates their own work.</text>
