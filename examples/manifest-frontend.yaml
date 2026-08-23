@@ -1,0 +1,11 @@
+# Example manifest — frontend
+
+name: example-frontend
+kind: product
+language: typescript
+stack: nextjs-app-router
+rules_file: AGENTS.md
+guard_script: governance/hooks/factory-guard.mjs
+scope_file: governance/hooks/factory-scope.json
+knowledge_dir: knowledge/
+roster_file: roster.yaml

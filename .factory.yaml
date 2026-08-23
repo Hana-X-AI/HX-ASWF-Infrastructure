@@ -1,0 +1,13 @@
+# HX-ASWF-Infrastructure — the repo's own manifest. Hand-edited source.
+# Never overwritten. `factory install` reads this file and the knowledge layer,
+# then generates the rules file and installs the path guard. (KDD-017, D6)
+
+name: hx-aswf-infrastructure
+kind: factory
+language: typescript
+rules_file: AGENTS.md
+guard_script: governance/hooks/factory-guard.mjs
+scope_file: governance/hooks/factory-scope.json
+knowledge_dir: knowledge/
+vault_manifest: knowledge/vaults.yaml
+roster_file: roster.yaml

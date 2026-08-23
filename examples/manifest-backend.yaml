@@ -1,0 +1,11 @@
+# Example manifest — backend
+
+name: example-backend
+kind: product
+language: typescript
+stack: node-fastify
+rules_file: AGENTS.md
+guard_script: governance/hooks/factory-guard.mjs
+scope_file: governance/hooks/factory-scope.json
+knowledge_dir: knowledge/
+roster_file: roster.yaml

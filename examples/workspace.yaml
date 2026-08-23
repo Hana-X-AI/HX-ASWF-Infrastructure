@@ -1,0 +1,10 @@
+# Example workspace
+
+# A workspace groups the repos one factory run touches.
+
+name: example-workspace
+repos:
+  - path: ./backend
+    manifest: examples/manifest-backend.yaml
+  - path: ./frontend
+    manifest: examples/manifest-frontend.yaml

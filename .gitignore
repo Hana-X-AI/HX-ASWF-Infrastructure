@@ -1,0 +1,14 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Retained run evidence is append-only and never committed (KDD-016, D10)
+evidence/*
+!evidence/README.md
+
+# Local environment
+.env
+.env.*
+
+# Logs
+*.log

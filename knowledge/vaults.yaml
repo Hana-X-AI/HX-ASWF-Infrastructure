@@ -1,0 +1,19 @@
+# Vault manifest — tier 2 pointer
+
+This manifest declares the local knowledge stores that are not in git. Agents
+read this file at the gate and learn where the large stores live and how to
+access them.
+
+# The Technology Knowledge Vault (TKV). Reference material agents search on demand.
+tkv:
+  mount: ~/hx-file-share/library
+  note: >
+    Per-technology reference material. Not in git. Each technology folder may
+    hold an agent.md defining a named specialist (see roster.yaml).
+
+# The technology library. Source of the technology experts in roster.yaml.
+technology_library:
+  mount: ~/hx-technologies
+  note: >
+    Mounted from HX-File-Share/library/technologies. One agent.md per
+    technology. Read-only reference; do not vendor source into git.

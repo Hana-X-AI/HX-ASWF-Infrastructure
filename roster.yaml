@@ -1,0 +1,39 @@
+# ASWF Agent Registry. (KDD-024 two classes, KDD-026 library is source, KDD-027 base vs product line)
+# Technology experts are defined in the library at the `library:` path and are not vendored into git.
+# Cross-cutting roles live in prompts/roles/.
+
+cross_cutting:            # process roles, in prompts/roles/
+  - { name: Xavier, role: coordinator, prompt: prompts/roles/coordinator.md }
+  - { name: Tessa,  role: validator,   prompt: prompts/roles/validator.md }
+  - { name: TBD,    role: security-reviewer,      prompt: prompts/roles/security-reviewer.md }
+  - { name: TBD,    role: performance-reviewer,   prompt: prompts/roles/performance-reviewer.md }
+  - { name: TBD,    role: doc-writer,             prompt: prompts/roles/doc-writer.md }
+
+base_factory:             # always-on technology experts (KDD-027)
+  - { name: Ledger,  technology: postgresql,      library: technologies/postgresql }
+  - { name: Craig,   technology: ollama,          library: aligned-profile/craig }
+  - { name: Quincy,  technology: qwen,            library: aligned-profile/quincy }
+  - { name: Hermes,  technology: omniroute,       library: technologies/OmniRoute }
+  - { name: Scribe,  technology: docling,         library: technologies/docling }
+  - { name: Athena,  technology: lightrag,        library: technologies/lightrag }
+  - { name: Wren,    technology: n8n,             library: technologies/n8n }
+  - { name: Owen,    technology: systems,         library: technologies/ubuntu-server }
+
+# Recommended base, pending owner confirmation (KDD-027)
+  - { name: Porter,  technology: fastmcp,         library: technologies/mcp-plane, pending: true }
+  - { name: Atlas,   technology: code-review-graph, library: technologies/code-review-graph, pending: true }
+  - { name: Argus,   technology: code-graph-rag,  library: technologies/code-graph-rag, pending: true }
+
+product_line:             # parked, activated per product (KDD-027)
+  - { name: Bastion,  technology: nginx,        library: technologies/nginx }
+  - { name: Aria,     technology: ag-ui,        library: technologies/ag-ui }
+  - { name: Maverick, technology: copilotkit,   library: technologies/copilotkit }
+  - { name: Iris,     technology: open-webui,   library: technologies/open-webui }
+  - { name: Weaver,   technology: langgraph,    library: technologies/langgraph }
+  - { name: Drake,    technology: gitdiagram,   library: technologies/gitdiagram, roadmap: true }
+
+verify_before_adopt:      # overlaps the knowledge layer
+  - { name: Muse, technology: mem0, library: technologies/mem0, note: overlaps knowledge layer }
+
+patterns_only:            # adopt patterns, not the tool
+  - { name: Jett, technology: jcode, note: adopt patterns, not the tool }

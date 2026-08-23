@@ -1,0 +1,31 @@
+{
+  "forbidden": [
+    ".git/**",
+    ".factory.yaml",
+    "roster.yaml",
+    "AGENTS.md",
+    "governance/hooks/**",
+    "evidence/**"
+  ],
+  "allowed": [
+    "knowledge/**",
+    "specs/**",
+    "prompts/**",
+    "profiles/**",
+    "src/**",
+    "test/**",
+    "docs/**",
+    "examples/**",
+    "governance/stages/**",
+    "governance/policy/**",
+    "governance/templates/**",
+    "observability/**",
+    "evals/**",
+    "README.md",
+    "CONTRIBUTING.md",
+    "GOVERNANCE.md",
+    "package.json",
+    "tsconfig.json",
+    "vitest.config.ts"
+  ]
+}

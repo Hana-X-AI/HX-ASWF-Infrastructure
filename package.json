@@ -1,0 +1,22 @@
+{
+  "name": "hx-aswf-infrastructure",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Agentic Software Factory (ASWF) — the self-hosted factory control plane.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "install:factory": "tsx src/cli.ts install",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "cli": "tsx src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}
