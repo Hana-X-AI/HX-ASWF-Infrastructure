@@ -1,7 +1,7 @@
 # Ollama on hxs-4 — operational notes
 
 **Scope:** the hxs-4 Ollama service and its interactive TUI.
-**Source:** M3 hxs-4 audit (2026-08-23), `audits/hx-cos-08-23-26-hxs4_ollama_audit.md`.
+**Source:** M3 hxs-4 audit (2026-08-23), `/home/hxsa/hx-i-t/docs/audits/hx-cos-08-23-26-hxs4_ollama_audit.md`.
 
 ## Effective commissioning state
 

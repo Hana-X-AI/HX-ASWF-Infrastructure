@@ -10,6 +10,7 @@ cross_cutting:            # process roles, in prompts/roles/
   - { name: Quill,  role: doc-writer,             prompt: prompts/roles/doc-writer.md }
 
 base_factory:             # always-on technology experts (KDD-027)
+  - { name: Dash,    technology: deepseek-harness, library: technologies/deepseek-harness }
   - { name: Ledger,  technology: postgresql,      library: technologies/postgresql }
   - { name: Craig,   technology: ollama,          library: aligned-profile/craig }
   - { name: Quincy,  technology: qwen,            library: aligned-profile/quincy }
